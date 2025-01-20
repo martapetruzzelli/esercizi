@@ -1,0 +1,14 @@
+[
+    {
+        "titolo" : "Promessi Sposi",
+        "autore" : "Manzoni",
+        "anno" : 2024,
+        "disponibilita" : true
+    },
+    {
+        "titolo" : "ciao",
+        "autore" : "io",
+        "anno" : 2025,
+        "disponibilita" : false
+    }
+]
