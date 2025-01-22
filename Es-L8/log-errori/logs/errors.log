@@ -1,0 +1,4 @@
+[20-Jan-2025 23:04:00 UTC] PHP Warning:  Undefined variable $nonEsisite in C:\laragon\www\esercizi\Es-L8\log-errori\index.php on line 5
+[20-Jan-2025 23:18:11 UTC] PHP Warning:  Undefined variable $nonEsisite in C:\laragon\www\esercizi\Es-L8\log-errori\index.php on line 5
+[20-Jan-2025 23:18:11 UTC] PHP Stack trace:
+[20-Jan-2025 23:18:11 UTC] PHP   1. {main}() C:\laragon\www\esercizi\Es-L8\log-errori\index.php:0
