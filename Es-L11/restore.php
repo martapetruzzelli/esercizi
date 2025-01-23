@@ -10,9 +10,9 @@
             exit;
         }
 
-        archiveSandwich($_GET['id'], 'deleted', 'sandwich');
+        archiveSandwich($_GET['id'], 'sandwich', 'deleted');
 
-        deleteSandwich($_GET['id'], 'sandwich');
+        deleteSandwich($_GET['id'], 'deleted');
 
     ?>
 

@@ -4,11 +4,14 @@
 
 <?php if(isset($_GET['message'])): ?>
 <div class="alert alert-success mx-5 px-5">
-    <?=$_GET['message'] ?>
+    <?=$_GET['message'];
+    if(isset($_GET['id'])){ ?>
+        <button class="btn btn-success mx-5" href="restore.php?id=<?=$_GET['id']?>">Undo</button>
+    <?php } ?>
 </div>
 
 <?php endif; ?>
-
+    
 <?php
 
 $sql = "SELECT * FROM sandwich ORDER BY price DESC";

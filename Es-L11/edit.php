@@ -1,32 +1,28 @@
 <?php include_once './includes/header.php'; ?>
+<?php include_once './includes/functions.php'; ?>
+
 
 <?php
 
     if(!isset($_GET['id'])){
         header('Location: index.php');
         exit;
-    }
+    } 
 
-    $sql = "SELECT * FROM sandwich WHERE id = '" . $_GET['id'] . "'";
 
-    $query = $db->prepare($sql);
-
-    if($query->execute()){
-
-        $rows = $query->fetchAll(PDO::FETCH_ASSOC);
-
+    try {
         [
             'flavor' => $flavor,
             'price' => $price,
             'vegan' => $vegan,
-            'avaiable' => $avaiable
-        ] = $rows[0];
+            'avaiable' => $avaiable,
+        ] = getSandwichById($_GET['id']);
 
-    }else{
+        } catch (Exception $e) {
 
-        throw new Exception($query->errorInfo());
-
-    }
+            echo $e->getMessage();
+            
+        }
 
 ?>
 
@@ -39,7 +35,7 @@
             <h1>Edit sandwich</h1>
 
             <form action="update.php" method="POST">
-
+                <input type="hidden" name="id" value="<?=$_GET['id']?>">
                 <label for="flavor">Flavor</label>
                 <input type="text" value="<?=$flavor ?>" name="flavor" id="flavor" class="form-control" placeholder="flavor">
 
