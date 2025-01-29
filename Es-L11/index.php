@@ -1,4 +1,5 @@
-<?php include_once './includes/header.php'; ?>
+<?php include_once './includes/header.php'; 
+include_once './includes/functions.php'; ?>
 
 <main>
 
@@ -14,13 +15,11 @@
     
 <?php
 
-$sql = "SELECT * FROM sandwich ORDER BY price DESC";
-
-$query = $db->prepare($sql);
-
-if($query->execute()){
-
-    $row = $query->fetchAll(PDO::FETCH_ASSOC);
+try{
+    $rows = getAllSandwich();
+}catch(Exception $e){
+    echo $e->getMessage();
+}
 
     ?>
     <div class="container">
@@ -38,7 +37,7 @@ if($query->execute()){
         </thead>
         <tbody>
             <?php
-                foreach($row as $sandwich):
+                foreach($rows as $sandwich):
                     [
                         'id' => $id,
                         'flavor' => $flavor,
@@ -64,7 +63,7 @@ if($query->execute()){
     </table>
     </div>
     <?php
-}
+
 
 ?>
 
