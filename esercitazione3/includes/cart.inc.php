@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-require_once "../order_mvc/order_model.php";
-require_once "connection.php";
+require_once realpath(__DIR__ ."/../order_mvc/order_model.php");
+require_once realpath(__DIR__ ."/../includes/connection.php");
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 
@@ -21,7 +21,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         "id" => $id,
         "quantity"=> $quantity
     ];
-    // insert_order($pdo, $_SESSION["user_id"], $id, $quantity);
 
     header("Location:../products.php?order=success");
 }else{

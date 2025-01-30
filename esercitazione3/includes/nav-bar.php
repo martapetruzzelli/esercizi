@@ -1,4 +1,8 @@
-<?php require_once "login_mvc/login_view.php";?>
+<?php require_once "login_mvc/login_view.php";
+require_once "includes/account.inc.php";
+
+$quantity = get_cart_quantity();
+?>
 
     <div class="d-flex flex-wrap align-items-center">
 
@@ -22,7 +26,10 @@
                 <div class="text-end">
                     <span></span>
                     <a href="cart.php">
-                        <i class="bi bi-bag text-light"></i>
+                        <button type="button" class="btn btn-warning position-relative">
+                            <i class="bi bi-bag text-dark"></i> 
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-danger"><?=$quantity?> <span class="visually-hidden"></span></span>
+                        </button>
                     </a>
                 </div>
 

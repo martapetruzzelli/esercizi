@@ -1,5 +1,5 @@
 <?php
-require_once "../cart_mvc/cart_model.php";
+require_once realpath(__DIR__ ."/../cart_mvc/cart_model.php");
 
 function insert_order(PDO $pdo, int $user_id):bool{
     

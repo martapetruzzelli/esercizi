@@ -1,6 +1,6 @@
 <?php
-require_once "./includes/connection.php";
-require_once "product_controls.php";
+require_once realpath(__DIR__ ."/../includes/connection.php");
+require_once realpath(__DIR__ ."/../product_mvc/product_controls.php");
 
 function create_all_products(PDO $pdo)
 {
@@ -29,8 +29,9 @@ function create_one_product(array $product)
                 <form action="includes/cart.inc.php" method="POST" class="form-product">
                     <input type="hidden" name="id" value="<?php echo $product["id"] ?>">
                     <input type="number" min="1" value="1" name="quantity" class="form-control" />
-                    <button
-                        class="btn btn-warning shadow-lg text-dark-emphasis w-50 text-center mt-3">Add to Cart</button>
+                    <button class="btn btn-warning shadow-lg text-dark-emphasis w-50 text-center mt-3">
+                        Add to Cart
+                    </button>
                 </form>
             </div>
         </div>

@@ -1,6 +1,6 @@
 <?php
 
-require_once "product_model.php";
+require_once realpath(__DIR__ ."/../product_mvc/product_model.php");
 
 function is_product_exists(PDO $pdo){
 

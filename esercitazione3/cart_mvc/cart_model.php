@@ -25,3 +25,4 @@ function get_cart_products(PDO $pdo){
     }
     return $products;
 }
+

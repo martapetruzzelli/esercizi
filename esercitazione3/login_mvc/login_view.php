@@ -2,7 +2,8 @@
 
 function output_username(){
     if(isset($_SESSION["user_id"])){
-        echo "Welcome " . $_SESSION["user_username"];
+        echo "<a href=\"account.php\"><i class=\"bi bi-person-circle text-light\"></i></a>
+               Welcome " . $_SESSION["user_username"];
     }else{
         echo "You are not logged in";
     }
