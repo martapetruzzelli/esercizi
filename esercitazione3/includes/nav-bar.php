@@ -3,8 +3,8 @@
     <div class="d-flex flex-wrap align-items-center">
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0 justify-content-start">
-            <li><a href="index.php" class="nav-link px-2 link">Home</a></li>
-            <li><a href="products.php" class="nav-link px-2 link">Products</a></li>
+            <li><a href="index.php" class="nav-link px-2 link text-light">Home</a></li>
+            <li><a href="products.php" class="nav-link px-2 link text-light">Products</a></li>
         </ul>
         <div class="d-flex gap-4 align-middle justify-content-end">
 
@@ -22,7 +22,7 @@
                 <div class="text-end">
                     <span></span>
                     <a href="cart.php">
-                        <i class="bi bi-bag"></i>
+                        <i class="bi bi-bag text-light"></i>
                     </a>
                 </div>
 

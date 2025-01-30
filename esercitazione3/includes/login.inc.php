@@ -14,15 +14,20 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
 
         $result = get_user($pdo, $username);
 
+
         if(is_input_empty($username, $password)){
             
             $errors["empty_input"] = "Fill in all fields";
 
-        }else if(is_username_wrong($pdo, $username)){
+        }
+        
+        if(is_username_wrong($result)){
 
             $errors["login_incorrect"] = "Incorrect credentials";
 
-        }else if(is_password_wrong($password, $result["password"])) {
+        }
+        
+        if(!password_verify($password, $result["password"])) {
 
             $errors["login_incorrect"] = "Incorrect credentials";
 
@@ -35,14 +40,15 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
             die();
         }
 
-        $newSessionId = session_create_id();
-        $sessionId = $newSessionId . "_" . $result["id"];
-        session_id($sessionId);
+        // $newSessionId = session_create_id();
+        // $sessionId = $newSessionId . "_" . $result["id"];
+        // session_id($sessionId);
         $_SESSION["user_id"] = $result["id"];
         $_SESSION["user_username"] = htmlspecialchars($result["username"]);
         $_SESSION["last_regeneration"] = time();
 
-        header("Location:../index.php?id=" . $_SESSION["user_id"] ."&login=success");
+        // print_r($result);
+        header("Location:../index.php?login=success");
 
         $pdo = null;
         $stmt = null;

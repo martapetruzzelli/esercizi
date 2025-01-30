@@ -1,6 +1,6 @@
 <?php
 require_once "./includes/connection.php";
-require_once "products_controls.php";
+require_once "product_controls.php";
 
 function create_all_products(PDO $pdo)
 {
@@ -18,19 +18,19 @@ function create_all_products(PDO $pdo)
 function create_one_product(array $product)
 {
     ?>
-    <div class="col">
+    <div class="col mt-5">
         <div class="card border border-warning rounded-4 bg-dark-subtle shadow-lg text-dark-emphasis">
-            <img src="<?php echo $product["img"] ?>" height="100" class="card-img-top rounded-4" alt="<?php echo $product["name"] ?>">
+            <img src="<?php echo $product["img"] ?>" class="card-img-top rounded-4 img-fluid" alt="<?php echo $product["name"] ?>">
             <div class="card-body text-center">
                 <h5 class="card-title"><?php echo $product["name"] ?></h5>
                 <h5 class="card-title"><?php echo $product["price"] . "$" ?></h5>
 
                 <p class="card-text"><?php echo $product["description"] ?></p>
-                <form action="" method="POST" class="form-product">
+                <form action="includes/cart.inc.php" method="POST" class="form-product">
                     <input type="hidden" name="id" value="<?php echo $product["id"] ?>">
-                    <input type="number" min="0" name="quantity" class="form-control" />
+                    <input type="number" min="1" value="1" name="quantity" class="form-control" />
                     <button
-                        class="btn btn-warning shadow-lg text-dark-emphasis w-50 text-center">Add to Cart</button>
+                        class="btn btn-warning shadow-lg text-dark-emphasis w-50 text-center mt-3">Add to Cart</button>
                 </form>
             </div>
         </div>

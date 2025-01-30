@@ -6,21 +6,30 @@ require_once "./includes/connection.php";
 require_once "./login_mvc/login_view.php";
 
 ?>
-
-<form action="includes/login.inc.php" method="POST">
-<div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" class="form-control" name="username" id="name" placeholder="Enter name">
-  </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-  <?php
-  check_login_errors();
-  ?>
-</form>
-
+<main class="container my-5">
+    <?php
+    if(isset($_SESSION["user_id"])){
+        echo "<div class=\"alert alert-danger\" role=\"alert\">
+            Already logged in<br>
+            Go back to <a href=\"index.php\">Home</a> or visit our <a href=\"products.php\">Shop</a>
+        </div>";
+    }
+    ?>
+    <h1 class="text-center">Log In</h1>
+    <form action="includes/login.inc.php" method="POST">
+        <div class="form-group mt-3">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="username" id="name" placeholder="Enter name">
+        </div>
+        <div class="form-group mt-3">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary mt-4">Submit</button>
+        <?php
+        check_login_errors();
+        ?>
+    </form>
+</main>
 <?php
 require_once "./includes/footer.php";

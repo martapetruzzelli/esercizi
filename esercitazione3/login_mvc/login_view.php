@@ -20,7 +20,8 @@ function check_login_errors(){
     }else if (isset($_GET["login"]) && $_GET["login"] === "success") {
         echo "<br>";
         echo "<div class=\"alert alert-success fs-2 text-center mx-auto mt-5\" role=\"alert\">
-                    Login success<br>                   
+                    Login success<br>
+                    Go back to <a href=\"index.php\">Home</a> or visit our <a href=\"products.php\">Shop</a>                 
                 </div>";
     }
 }

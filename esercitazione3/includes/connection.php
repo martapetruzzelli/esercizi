@@ -3,11 +3,11 @@
 $hostname = 'localhost';
 $dbName = 'ecommerce';
 $dbUser = 'Marta';
-$password = 'password';
+$dbPassword = 'password';
 
 try{
 
-    $pdo = new PDO("mysql:host=$hostname;dbname=$dbName", $dbUser, $password);
+    $pdo = new PDO("mysql:host=$hostname;dbname=$dbName", $dbUser, $dbPassword);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 }catch(PDOException $e){

@@ -10,3 +10,4 @@ function is_product_exists(PDO $pdo){
         die("Query failed: " . $e->getMessage());
     }
 }
+
