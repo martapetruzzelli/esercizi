@@ -1,0 +1,74 @@
+[
+    {
+        "id": 29,
+        "question_id": 9,
+        "answer_text": "echo()",
+        "is_correct": "1"
+    },
+    {
+        "id": 30,
+        "question_id": 9,
+        "answer_text": "console_log()",
+        "is_correct": "0"
+    },
+    {
+        "id": 31,
+        "question_id": 9,
+        "answer_text": "display()",
+        "is_correct": "0"
+    },
+    {
+        "id": 32,
+        "question_id": 10,
+        "answer_text": ".",
+        "is_correct": "1"
+    },
+    {
+        "id": 33,
+        "question_id": 10,
+        "answer_text": "+",
+        "is_correct": "0"
+    },
+    {
+        "id": 34,
+        "question_id": 10,
+        "answer_text": ",",
+        "is_correct": "0"
+    },
+    {
+        "id": 35,
+        "question_id": 11,
+        "answer_text": "strlen()",
+        "is_correct": "1"
+    },
+    {
+        "id": 36,
+        "question_id": 11,
+        "answer_text": "strlenght()",
+        "is_correct": "0"
+    },
+    {
+        "id": 37,
+        "question_id": 11,
+        "answer_text": "lenght()",
+        "is_correct": "0"
+    },
+    {
+        "id": 38,
+        "question_id": 12,
+        "answer_text": "variable $nomeVariabile;",
+        "is_correct": "0"
+    },
+    {
+        "id": 39,
+        "question_id": 12,
+        "answer_text": "$nomeVariabile;",
+        "is_correct": "1"
+    },
+    {
+        "id": 40,
+        "question_id": 12,
+        "answer_text": "var $nomeVariabile;",
+        "is_correct": "0"
+    }
+]

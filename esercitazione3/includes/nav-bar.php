@@ -1,6 +1,10 @@
 <?php require_once "login_mvc/login_view.php";
 require_once "cart_mvc/cart_model.php";
 
+if(isset($_SESSION["cart"])){
+    $_SESSION["cart"] = [];
+}
+
 $quantity = get_cart_quantity();
 ?>
 
