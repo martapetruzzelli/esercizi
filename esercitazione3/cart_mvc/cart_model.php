@@ -26,3 +26,9 @@ function get_cart_products(PDO $pdo){
     return $products;
 }
 
+function get_cart_quantity(){
+    return array_reduce($_SESSION["cart"], function($acc, $el){
+        return $acc + $el['quantity'];
+    },0);
+}
+

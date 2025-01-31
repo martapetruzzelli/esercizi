@@ -1,5 +1,4 @@
 <?php
-
 require_once "connection.php";
 
 function create_users_order(PDO $pdo, $id){
@@ -26,17 +25,15 @@ function create_users_order(PDO $pdo, $id){
 
         $orders = $query?->fetchAll(PDO::FETCH_ASSOC);
 
-        if(!$orders) die;
+        if(!$orders){
+            $orders = [];
+        };
         return $orders;
     }catch(PDOException $e){
         echo $query->errorInfo();
     }
 }
 
-function get_cart_quantity(){
-    return array_reduce($_SESSION["cart"], function($acc, $el){
-        return $acc + $el['quantity'];
-    },0);
-}
+
 
 

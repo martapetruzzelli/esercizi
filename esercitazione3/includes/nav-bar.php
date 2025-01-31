@@ -1,5 +1,5 @@
 <?php require_once "login_mvc/login_view.php";
-require_once "includes/account.inc.php";
+require_once "cart_mvc/cart_model.php";
 
 $quantity = get_cart_quantity();
 ?>
