@@ -11,7 +11,7 @@ function get_all_subjects(PDO $pdo): array{
 }
 
 function get_questions(PDO $pdo, int $subject_id): array{
-    $sql = "SELECT * FROM question WHERE subject_id = :subject_id ORDER BY RAND();";
+    $sql = "SELECT * FROM question WHERE subject_id = :subject_id;";
     $query = $pdo->prepare($sql);
     $query->bindParam(":subject_id", $subject_id, PDO::PARAM_INT);
     $query->execute();

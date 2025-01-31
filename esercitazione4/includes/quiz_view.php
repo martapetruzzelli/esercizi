@@ -34,10 +34,12 @@ function get_question_from_file(string $questionFile, string $answersFile, int $
 }
 
 function create_question(array $question){
+    
+    
     $html = "<div><h3>{$question["question"]["question_text"]}</h3>
-            <select>"; 
+            <select name='answers'>"; 
             foreach($question["answers"] as $answer){
-                $html .= "<option>{$answer["answer_text"]}</option>";
+                $html .= "<option value='{$answer["is_correct"]}'>{$answer["answer_text"]}</option>";
             }
             $html .= "</select></div>";
     echo $html;
